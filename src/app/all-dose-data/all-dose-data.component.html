@@ -1,0 +1,37 @@
+<ul >
+  <li  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/home">Home</a></li>
+  <li  routerLinkActive="active"><a [routerLink]="['/alldose']">All Dose data</a></li>
+  <li  routerLinkActive="active"><a [routerLink]="['/lastdose']">last Dose data</a></li>
+  <li  routerLinkActive="active"><a [routerLink]="['/ReplaceReservoir']">Replace Reservoir</a></li>
+  <li  routerLinkActive="active"><a [routerLink]="['/showclock']">Show Clock</a></li>
+</ul>
+<br>
+<h2 class="header"style="color: #009879;text-align: center;"> show patients All doses</h2>
+
+
+
+<table >
+    <thead >
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>BloodSuger</th>
+            <th>InsulinDose</th>
+            <th>State</th>
+            <th>Reservoir Value</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let patient of sort(patients_data2)" >
+            <td [ngClass]="patient.bloodsugar>120?'abnormal':'normal'">{{patient.id}}</td>
+            <td [ngClass]="patient.bloodsugar>120?'abnormal':'normal'">{{patient.name}}</td>
+            <td [ngClass]="patient.bloodsugar>120?'abnormal':'normal'">{{patient.bloodsugar}}</td>
+            <td [ngClass]="patient.bloodsugar>120?'abnormal':'normal'">{{patient.dose}}</td>
+            <td [ngClass]="patient.bloodsugar>120?'abnormal':'normal'">{{patient.state}}</td>
+            <td [ngClass]="patient.bloodsugar>120?'abnormal':'normal'">{{patient.ReservoirValue}}</td>
+            <td [ngClass]="patient.bloodsugar>120?'abnormal':'normal'">{{get_date(patient.date)}}</td>
+            
+        </tr>
+    </tbody>
+</table>

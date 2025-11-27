@@ -1,0 +1,25 @@
+<form style="text-align: center;" (submit)="onSubmit(contactForm)" #contactForm="ngForm">
+
+    <div class="header" style="color: #009879;">
+        <br>
+        <h2>Login Page</h2>
+        <br>
+    </div>
+
+    <div class="form-row">
+        <br>
+        <label for="inputID">Nurse ID </label>
+        <input type="number" class="form-control" ngModel name="ID" #NurseTxt="ngModel" required>
+        <p class="errMsg" *ngIf="!NurseTxt.valid && NurseTxt.touched">ID is required</p>
+    </div>
+
+    <div class="form-row">
+        <br>
+        <label for="inputpassword">Password</label>
+        <input type="password" class="form-control" ngModel name="password" #PasswordTxt="ngModel" required>
+        <p class="errMsg" *ngIf="!PasswordTxt.valid && PasswordTxt.touched">Password is required</p>
+    </div>
+    
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Login</button>
+</form>

@@ -1,0 +1,21 @@
+        <ul >
+          <li  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/home">Home</a></li>
+          <li  routerLinkActive="active"><a [routerLink]="['/alldose']">All Dose data</a></li>
+          <li  routerLinkActive="active"><a [routerLink]="['/lastdose']">last Dose data</a></li>
+          <li  routerLinkActive="active"><a [routerLink]="['/ReplaceReservoir']">Replace Reservoir</a></li>
+          <li  routerLinkActive="active"><a [routerLink]="['/showclock']">Show Clock</a></li>
+        </ul>
+    <br>
+    
+<h2 class="header"style="color: #009879;text-align: center;">Current  Clock</h2>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="digitalClock">
+      <div >
+        <div>{{hour}}:{{minute}}:{{second}} {{ampm}}</div>
+      </div>
+    </div>

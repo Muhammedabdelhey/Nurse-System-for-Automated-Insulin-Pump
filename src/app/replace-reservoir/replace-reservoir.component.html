@@ -1,0 +1,31 @@
+<ul >
+        <li  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/home">Home</a></li>
+        <li  routerLinkActive="active"><a [routerLink]="['/alldose']">All Dose data</a></li>
+        <li  routerLinkActive="active"><a [routerLink]="['/lastdose']">last Dose data</a></li>
+        <li  routerLinkActive="active"><a [routerLink]="['/ReplaceReservoir']">Replace Reservoir</a></li>
+        <li  routerLinkActive="active"><a [routerLink]="['/showclock']">Show Clock</a></li>
+      </ul>
+  <br>
+    
+<form style="text-align: center;" (submit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div >
+                
+                <h2 class="header"style="color: #009879;">Replace Reservoir</h2>
+                <br>
+        </div>
+        <div class="form-row">
+                <br>
+                <label for="inputID">Patient ID (SSN)</label>
+                <input type="number" class="form-control" ngModel name="ID" #IDTxt="ngModel" required>
+                <p class="errMsg" *ngIf="!IDTxt.valid && IDTxt.touched">ID is required</p>
+        </div>
+        <div class="form-row">
+                <br>
+                <label for="inputReservoirVolume">Reservoir Volume</label>
+                <br>
+                <input type="number" class="form-control" ngModel name="ReservoirVolume" #ReservoirVolumeTxt="ngModel" required>
+                <p class="errMsg" *ngIf="ReservoirVolumeTxt.value!=100 &&ReservoirVolumeTxt.touched">Reservoir Volume should be = 100</p>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" [disabled]="ReservoirVolumeTxt.value!=100||!IDTxt.valid">Replace</button>
+</form>
